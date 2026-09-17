@@ -5,6 +5,7 @@
   "scripts": {
     "start": "ng serve --host 0.0.0.0",
     "build": "ng build",
+    "build:pages": "ng build --base-href /QualyPostoPage2/",
     "preview": "npx serve dist"
   },
   "dependencies": {
