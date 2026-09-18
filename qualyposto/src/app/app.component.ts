@@ -147,7 +147,7 @@ interface DashboardRecord {
           <div class="hero-art">
             <img
               class="hero-background"
-              src="assets/ecosystem.png?v=f2125b75"
+              src="assets/ecosystem.png?v=439253c9"
               alt=""
               width="1872"
               height="941"
@@ -1091,7 +1091,7 @@ interface DashboardRecord {
 
           <div class="final-art">
             <img
-              src="assets/ecosystem.png?v=f2125b75"
+              src="assets/ecosystem.png?v=439253c9"
               alt="Ecossistema QualyPosto"
               width="1672"
               height="941"
