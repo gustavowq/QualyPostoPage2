@@ -58,19 +58,41 @@ interface DashboardRecord {
           id="navigation"
           [class.is-open]="menuOpened()"
         >
+          <details class="nav-dropdown">
+            <summary>
+              Solu&ccedil;&atilde;o
+            </summary>
+
+            <div class="nav-dropdown-menu">
+              <a href="#checklist" (click)="closeMenu()">Checklist</a>
+              <a href="#recebimento" (click)="closeMenu()">Recebimento</a>
+            </div>
+          </details>
+
           <a href="#solucao" (click)="closeMenu()">Solução</a>
           <a href="#checklist" (click)="closeMenu()">Checklist</a>
           <a href="#gerencial" (click)="closeMenu()">Gerencial</a>
           <a href="#beneficios" (click)="closeMenu()">Benefícios</a>
         </div>
 
-        <button
-          class="button button-small nav-contact"
-          (click)="openContact($event)"
+        <div class="nav-actions">
+          <button
+            class="button button-small nav-contact"
+            type="button"
+            (click)="openContact($event)"
         >
           Conhecer a solução
           <span aria-hidden="true">↗</span>
         </button>
+
+          <button
+            class="button button-small nav-sistema"
+            type="button"
+          >
+          Acessar o sistema
+          <span aria-hidden="true">↗</span>
+          </button>
+        </div>
 
         <button
           class="menu-toggle"
@@ -217,91 +239,158 @@ interface DashboardRecord {
         </div>
       </section>
 
-      <!-- ECOSSISTEMA: resume os três pilares da solução. -->
+      <!-- ECOSSISTEMA: apresenta os dois modulos centrais da solucao. -->
       <section class="section ecosystem" id="solucao">
         <div class="container">
-          <div class="section-head">
+          <div class="section-head ecosystem-heading">
             <div>
               <p class="eyebrow">
-                TRÊS PILARES. UM SÓ ECOSSISTEMA.
+                DOIS M&Oacute;DULOS. UM S&Oacute; ECOSSISTEMA.
               </p>
 
               <h2>
-                Da operação à gestão.<br>
-                Tudo conectado.
+                Recebimento e checklist.<br>
+                Do campo &agrave; decis&atilde;o.
               </h2>
             </div>
 
             <p>
-              O que a equipe registra no campo se transforma em
-              informação para quem decide.
+              Processos guiados no posto, evid&ecirc;ncias organizadas
+              e uma vis&atilde;o gerencial que transforma cada registro
+              em controle operacional.
             </p>
           </div>
 
-          <div class="pillar-grid">
-            <a class="pillar" href="#recebimento">
-              <div class="pillar-top">
-                <span>01</span>
-                <span aria-hidden="true">↗</span>
+          <div class="ecosystem-card-grid">
+            <a class="ecosystem-card ecosystem-card--receiving" href="#recebimento">
+              <div class="ecosystem-card-top">
+                <span class="ecosystem-card-number">01</span>
+                <span class="ecosystem-card-link">
+                  Explorar m&oacute;dulo
+                  <span aria-hidden="true">&#8599;</span>
+                </span>
               </div>
 
-              <span class="pillar-icon" aria-hidden="true">▤</span>
+              <div class="ecosystem-card-heading">
+                <span class="ecosystem-card-icon" aria-hidden="true">REC</span>
+                <div>
+                  <p class="micro-label">QUALYPOSTO RECEBIMENTO</p>
+                  <h3>Recebimento</h3>
+                </div>
+              </div>
 
-              <p class="micro-label">
-                APLICATIVO QUALYPOSTO
+              <p class="ecosystem-card-summary">
+                Padronize a confer&ecirc;ncia da entrega, documente a
+                qualidade do combust&iacute;vel e mantenha todo o
+                hist&oacute;rico pronto para consulta.
               </p>
 
-              <h3>Operação</h3>
-
-              <p>
-                Registre recebimentos e acompanhe a análise de
-                conformidade do combustível.
-              </p>
+              <ul class="ecosystem-feature-list">
+                <li>
+                  <span class="ecosystem-feature-dot" aria-hidden="true"></span>
+                  <div>
+                    <strong>Verifica&ccedil;&atilde;o de lacre automatizada</strong>
+                    <span>Oriente a confer&ecirc;ncia e registre diverg&ecirc;ncias antes da descarga.</span>
+                  </div>
+                </li>
+                <li>
+                  <span class="ecosystem-feature-dot" aria-hidden="true"></span>
+                  <div>
+                    <strong>Evid&ecirc;ncias por fotos e v&iacute;deos</strong>
+                    <span>Centralize as m&iacute;dias vinculadas ao recebimento e preserve a rastreabilidade.</span>
+                  </div>
+                </li>
+                <li>
+                  <span class="ecosystem-feature-dot" aria-hidden="true"></span>
+                  <div>
+                    <strong>Vis&atilde;o gerencial web</strong>
+                    <span>Acompanhe status, resultados e hist&oacute;rico por unidade ou por toda a rede.</span>
+                  </div>
+                </li>
+                <li>
+                  <span class="ecosystem-feature-dot" aria-hidden="true"></span>
+                  <div>
+                    <strong>Registro de amostra-testemunha</strong>
+                    <span>Documente identifica&ccedil;&atilde;o, armazenamento e v&iacute;nculo com cada entrega.</span>
+                  </div>
+                </li>
+                <li>
+                  <span class="ecosystem-feature-dot" aria-hidden="true"></span>
+                  <div>
+                    <strong>RAQ digital automatizado</strong>
+                    <span>Gere o registro de an&aacute;lise da qualidade com dados preenchidos automaticamente.</span>
+                  </div>
+                </li>
+              </ul>
             </a>
 
-            <a class="pillar" href="#checklist">
-              <div class="pillar-top">
-                <span>02</span>
-                <span aria-hidden="true">↗</span>
+            <a class="ecosystem-card ecosystem-card--checklist" href="#checklist">
+              <div class="ecosystem-card-top">
+                <span class="ecosystem-card-number">02</span>
+                <span class="ecosystem-card-link">
+                  Explorar m&oacute;dulo
+                  <span aria-hidden="true">&#8599;</span>
+                </span>
               </div>
 
-              <span class="pillar-icon" aria-hidden="true">☑</span>
-
-              <p class="micro-label">
-                QUALYPOSTO CHECKLIST
-              </p>
-
-              <h3>Conformidade</h3>
-
-              <p>
-                Organize inspeções, personalize perguntas e registre
-                evidências de cada item.
-              </p>
-            </a>
-
-            <a class="pillar" href="#gerencial">
-              <div class="pillar-top">
-                <span>03</span>
-                <span aria-hidden="true">↗</span>
+              <div class="ecosystem-card-heading">
+                <span class="ecosystem-card-icon" aria-hidden="true">CHK</span>
+                <div>
+                  <p class="micro-label">QUALYPOSTO CHECKLIST</p>
+                  <h3>Checklist</h3>
+                </div>
               </div>
 
-              <span class="pillar-icon" aria-hidden="true">▦</span>
-
-              <p class="micro-label">GERENCIAL WEB</p>
-
-              <h3>Visão gerencial</h3>
-
-              <p>
-                Consulte a operação de um posto ou de toda a rede,
-                de onde você estiver.
+              <p class="ecosystem-card-summary">
+                Estruture inspe&ccedil;&otilde;es, conduza a equipe durante
+                a execu&ccedil;&atilde;o e acompanhe a conformidade em um
+                painel central.
               </p>
+
+              <ul class="ecosystem-feature-list">
+                <li>
+                  <span class="ecosystem-feature-dot" aria-hidden="true"></span>
+                  <div>
+                    <strong>M&oacute;dulo mobile para coleta</strong>
+                    <span>Registre respostas, observa&ccedil;&otilde;es e evid&ecirc;ncias diretamente no posto.</span>
+                  </div>
+                </li>
+                <li>
+                  <span class="ecosystem-feature-dot" aria-hidden="true"></span>
+                  <div>
+                    <strong>M&oacute;dulo gerencial web</strong>
+                    <span>Crie modelos, distribua checklists, acompanhe a execu&ccedil;&atilde;o e compare unidades em um painel.</span>
+                  </div>
+                </li>
+                <li>
+                  <span class="ecosystem-feature-dot" aria-hidden="true"></span>
+                  <div>
+                    <strong>Relat&oacute;rio de conformidade</strong>
+                    <span>Consolide itens conformes, n&atilde;o conformidades, evid&ecirc;ncias e respons&aacute;veis.</span>
+                  </div>
+                </li>
+                <li>
+                  <span class="ecosystem-feature-dot" aria-hidden="true"></span>
+                  <div>
+                    <strong>Tutorial automatizado de preenchimento</strong>
+                    <span>Guie o operador, reduza d&uacute;vidas e padronize a execu&ccedil;&atilde;o de cada rotina.</span>
+                  </div>
+                </li>
+                <li>
+                  <span class="ecosystem-feature-dot" aria-hidden="true"></span>
+                  <div>
+                    <strong>Categoriza&ccedil;&atilde;o regulat&oacute;ria</strong>
+                    <span>Organize perguntas por &oacute;rg&atilde;o, norma e frente de fiscaliza&ccedil;&atilde;o aplic&aacute;vel.</span>
+                  </div>
+                </li>
+              </ul>
             </a>
           </div>
 
-          <p class="included">
-            <span aria-hidden="true">✓</span>
-            Aplicativos separados ou juntos.
-            <strong>Gerencial Web sempre incluído.</strong>
+          <p class="ecosystem-included">
+            <span aria-hidden="true">&#10003;</span>
+            Dois m&oacute;dulos integrados.
+            <strong>O Gerencial Web conecta opera&ccedil;&atilde;o, evid&ecirc;ncias e decis&atilde;o.</strong>
           </p>
         </div>
       </section>
@@ -963,6 +1052,95 @@ interface DashboardRecord {
         </div>
       </section>
 
+      <!-- PLANOS: apresenta os modulos individuais e a solução completa. -->
+      <section class="section pricing" id="planos" aria-labelledby="pricing-title">
+        <div class="pricing-orbit pricing-orbit--one" aria-hidden="true"></div>
+        <div class="pricing-orbit pricing-orbit--two" aria-hidden="true"></div>
+        <div class="container pricing-container">
+          <div class="pricing-heading">
+            <div>
+              <p class="eyebrow">ESCOLHA O NÍVEL DE CONTROLE</p>
+              <h2 id="pricing-title">Comece por um modulo.<br><span>Ou conecte toda a operação.</span></h2>
+            </div>
+            <p>Tecnologia especializada para transformar rotinas criticas do posto em processos rastreaveis, padronizados e faceis de acompanhar.</p>
+          </div>
+
+          <div class="pricing-grid">
+            <article class="price-card price-card--receiving">
+              <div class="price-card-topline">
+                <span class="price-card-code">01 / REC</span>
+                <span class="price-card-status">MODULO INDIVIDUAL</span>
+              </div>
+              <div class="price-card-icon" aria-hidden="true"><span>REC</span><i></i></div>
+              <p class="micro-label">QUALYPOSTO</p>
+              <h3>Recebimento</h3>
+              <p class="price-card-description">Segurança e rastreabilidade da chegada do caminho ate a liberação do combustivel.</p>
+              <ul class="price-feature-list">
+                <li><span aria-hidden="true"></span> Conferencia de lacres e evidencias digitais</li>
+                <li><span aria-hidden="true"></span> RAQ e amostra-testemunha organizados</li>
+                <li><span aria-hidden="true"></span> Historico por entrega e por unidade</li>
+              </ul>
+              <div class="price-card-footer">
+                <div class="price-value"><span>Investimento</span><strong><sup>R$</sup> 450</strong></div>
+                <button class="price-action" type="button" (click)="openContact($event)">
+                  Quero este modulo
+                </button>
+              </div>
+            </article>
+
+            <article class="price-card price-card--checklist">
+              <div class="price-card-topline">
+                <span class="price-card-code">02 / CHK</span>
+                <span class="price-card-status">MODULO INDIVIDUAL</span>
+              </div>
+              <div class="price-card-icon" aria-hidden="true"><span>CHK</span><i></i></div>
+              <p class="micro-label">QUALYPOSTO</p>
+              <h3>Checklist</h3>
+              <p class="price-card-description">Inspeções guiadas para elevar o padrão da equipe e enxergar não conformidades com rapidez.</p>
+              <ul class="price-feature-list">
+                <li><span aria-hidden="true"></span> Modelos por rotina, norma ou fiscalização</li>
+                <li><span aria-hidden="true"></span> Coleta mobile com fotos e observações</li>
+                <li><span aria-hidden="true"></span> Painel de conformidade entre unidades</li>
+              </ul>
+              <div class="price-card-footer">
+                <div class="price-value"><span>Investimento</span><strong><sup>R$</sup> 750</strong></div>
+                <button class="price-action" type="button" (click)="openContact($event)">
+                  Quero este modulo
+                </button>
+              </div>
+            </article>
+
+            <article class="price-card price-card--combo">
+              <div class="combo-ribbon"><span>RECOMENDADO</span><strong>ECONOMIZE R$ 100</strong></div>
+              <div class="price-card-topline">
+                <span class="price-card-code">01 + 02</span>
+                <span class="price-card-status">ECOSSISTEMA COMPLETO</span>
+              </div>
+              <div class="combo-symbol" aria-hidden="true"><span>REC</span><i>+</i><span>CHK</span></div>
+              <p class="micro-label">QUALYPOSTO COMPLETO</p>
+              <h3>Combo</h3>
+              <p class="price-card-description">Recebimento e Checklist trabalhando juntos para uma visão gerencial unica de toda a operação.</p>
+              <ul class="price-feature-list">
+                <li><span aria-hidden="true"></span> Todos os recursos dos dois modulos</li>
+                <li><span aria-hidden="true"></span> Indicadores e evidencias em uma so visão</li>
+                <li><span aria-hidden="true"></span> Mais contexto para comparar toda a rede</li>
+              </ul>
+              <div class="price-card-footer">
+                <div class="price-value"><span>Investimento</span><strong><sup>R$</sup> 1.100</strong></div>
+                <button class="price-action" type="button" (click)="openContact($event)">
+                  Quero controle completo
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <p class="pricing-note">
+
+            Não sabe qual formato combina com a sua operação?
+            <button type="button" (click)="openContact($event)">Fale com um especialista.</button>
+          </p>
+        </div>
+      </section>
       <!-- DIFERENCIAIS: reúne os principais recursos da plataforma. -->
       <section class="section differentials">
         <div class="container">
@@ -1276,11 +1454,11 @@ export class AppComponent {
   readonly receivingSteps: ReceivingStep[] = [
     {
       title: 'Identificar',
-      label: 'NF-e + SERPRO',
+      label: 'CAPTURA VIA NF-e',
       heading: 'A informação começa na origem.',
       text:
-        'Obtenha informações relacionadas à nota fiscal a partir ' +
-        'do seu código com a integração SERPRO.'
+        'Capture automaticamente os dados da nota fiscal a partir ' +
+        'da NF-e, reduzindo o preenchimento manual.'
     },
     {
       title: 'Conferir',
@@ -1468,7 +1646,7 @@ export class AppComponent {
 
   readonly differentials = [
     'Operação, conformidade e gestão integradas.',
-    'Integração SERPRO para informações da NF-e.',
+    'Captura automática de dados a partir da NF-e.',
     'Análise com regras relacionadas à ANP.',
     'Checklists moldáveis à sua rotina.',
     'Evidências e Gerencial sempre conectados.'
@@ -1539,6 +1717,9 @@ export class AppComponent {
 
   closeMenu(): void {
     this.menuOpened.set(false);
+    document
+      .querySelector<HTMLDetailsElement>('.nav-dropdown')
+      ?.removeAttribute('open');
   }
 
   // Atualiza os filtros e detalhes da demonstração gerencial.
@@ -1763,7 +1944,7 @@ export class AppComponent {
 
         const staggerSelectors = [
           '.question',
-          '.pillar',
+          '.ecosystem-card',
           '.workflow-step',
           '.benefit-list article',
           '.difference-rows > div'
@@ -1783,7 +1964,8 @@ export class AppComponent {
           ).filter(sibling => sibling.matches(staggerSelectors));
           const index = Math.max(0, siblings.indexOf(element));
 
-          staggerDelay.set(element, Math.min(index, 4) * 85);
+          const delayStep = element.matches('.ecosystem-card') ? 150 : 85;
+          staggerDelay.set(element, Math.min(index, 4) * delayStep);
         }
 
         const observedElements = Array.from(
@@ -1798,13 +1980,14 @@ export class AppComponent {
               }
 
               const element = entry.target as HTMLElement;
+              const isEcosystemCard = element.matches('.ecosystem-card');
 
               animate(element, {
                 opacity: [0, 1],
-                translateY: [30, 0],
-                scale: [0.985, 1],
+                translateY: isEcosystemCard ? [70, 0] : [30, 0],
+                scale: isEcosystemCard ? [0.94, 1] : [0.985, 1],
                 delay: staggerDelay.get(element) ?? 0,
-                duration: 850,
+                duration: isEcosystemCard ? 1100 : 850,
                 ease: 'out(4)'
               });
 
