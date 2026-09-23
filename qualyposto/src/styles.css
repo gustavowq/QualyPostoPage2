@@ -1535,6 +1535,11 @@ section[id] {
   border-radius: 18px;
   box-shadow: 0 35px 70px rgb(0 0 0 / 31%);
 }
+.dashboard-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 
 .dashboard-side {
   display: flex;
@@ -2775,7 +2780,7 @@ dialog::backdrop {
   .receiving-demo { grid-template-columns: 0.7fr 1.3fr; gap: 30px; }
   .receiving-panel-grid { grid-template-columns: 1fr 185px; padding: 25px; }
   .checklist-grid { gap: 50px; }
-  .dashboard-side { width: 140px; }
+.dashboard-side { width: 140px; }
   .dashboard-main { padding: 24px; }
 }
 @media (max-width: 900px) {
@@ -2786,7 +2791,7 @@ dialog::backdrop {
   .section-head { flex-direction: column; align-items: flex-start; gap: 22px; }
   .ecosystem-card { padding: 28px; }
   .receiving-panel-grid { grid-template-columns: 1fr 170px; }
-  .dashboard-side { width: 60px; }
+.dashboard-side { width: 60px; }
   .dashboard-side > span span, .sidebar-bottom { display: none; }
   .workflow-track { grid-template-columns: 1fr 1fr; }
   .workflow-track::before { display: none; }
@@ -2886,7 +2891,7 @@ dialog::backdrop {
   .sample-label { margin-left: 0; }
   .evidence-foot { flex-direction: column; align-items: flex-start; gap: 8px; }
   .dashboard-shell { margin-top: 35px; border-width: 4px; border-radius: 10px; }
-  .dashboard-side { display: none; }
+.dashboard-side { display: none; }
   .dashboard-main { padding: 18px 13px; }
   .dashboard-top { flex-direction: column; align-items: flex-start; gap: 18px; }
   .unit-select, .unit-select select { width: 100%; }

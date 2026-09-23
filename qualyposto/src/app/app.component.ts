@@ -131,7 +131,7 @@ interface DashboardRecord {
 
             <h1 id="hero-title" class="hero-enter">
               Evite multas<br>
-              <span>Da ANP e INMETRO.</span><br>
+              <span>da ANP e do INMETRO.</span><br>
 
             </h1>
 
@@ -240,7 +240,7 @@ interface DashboardRecord {
         </div>
       </section>
 
-      <!-- ECOSSISTEMA: apresenta os dois modulos centrais da solucao. -->
+      <!-- ECOSSISTEMA: apresenta os dois módulos centrais da solução. -->
       <section class="section ecosystem" id="solucao">
         <div class="container">
           <div class="section-head ecosystem-heading">
@@ -550,7 +550,7 @@ interface DashboardRecord {
               <img
                 class="checklist-real-image"
                 src="assets/checklist-mobile.png"
-                alt="Tela real do QualyPosto Checklist exibindo itens, evidências e observação"
+                alt="Tela real do QualyPosto Checklist exibindo itens, evidências e observações"
                 width="425"
                 height="861"
                 loading="lazy"
@@ -697,190 +697,15 @@ interface DashboardRecord {
             </p>
           </div>
 
-          <div class="dashboard-shell">
-            <aside class="dashboard-side">
-              <div class="dash-brand">◉</div>
-
-              <span class="side-active">
-                ▦ <span>Visão geral</span>
-              </span>
-
-              <span>▤ <span>Recebimentos</span></span>
-              <span>☑ <span>Checklists</span></span>
-              <span>⌖ <span>Unidades</span></span>
-
-              <div class="sidebar-bottom">
-                QUALYPOSTO
-                <span>GERENCIAL</span>
-              </div>
-            </aside>
-
-            <div class="dashboard-main">
-              <div class="dashboard-top">
-                <div>
-                  <p>GERENCIAL WEB</p>
-                  <h3>Visão da operação</h3>
-                </div>
-
-                <label class="unit-select">
-                  <span>Unidade</span>
-
-                  <select
-                    [value]="selectedUnit()"
-                    (change)="changeUnit($event)"
-                  >
-                    @for (unit of units; track unit) {
-                      <option [value]="unit">{{ unit }}</option>
-                    }
-                  </select>
-                </label>
-              </div>
-
-              <div class="dash-overview">
-                <div>
-                  <span>Recebimentos</span>
-                  <strong>
-                    Operação registrada
-                    <i>↗</i>
-                  </strong>
-                </div>
-
-                <div>
-                  <span>Checklists</span>
-                  <strong>
-                    Conformidade em foco
-                    <i>✓</i>
-                  </strong>
-                </div>
-
-                <div>
-                  <span>Unidades</span>
-                  <strong>
-                    {{
-                      selectedUnit() === 'Todas as unidades'
-                        ? 'Visão centralizada'
-                        : selectedUnit()
-                    }}
-                    <i>⌖</i>
-                  </strong>
-                </div>
-              </div>
-
-              <div
-                class="dash-tabs"
-                aria-label="Tipo de registro"
-              >
-                @for (tab of dashboardTabs; track tab) {
-                  <button
-                    type="button"
-                    [class.active]="selectedDashboardTab() === tab"
-                    [attr.aria-pressed]="
-                      selectedDashboardTab() === tab
-                    "
-                    (click)="changeDashboardTab(tab)"
-                  >
-                    {{ tab }}
-                  </button>
-                }
-              </div>
-
-              <div class="table-scroll">
-                <table>
-                  <caption class="sr-only">
-                    Registros demonstrativos filtrados por unidade
-                  </caption>
-
-                  <thead>
-                    <tr>
-                      <th>Unidade</th>
-                      <th>Processo</th>
-                      <th>Status</th>
-                      <th>
-                        <span class="sr-only">Consultar</span>
-                      </th>
-                    </tr>
-                  </thead>
-
-                  <tbody>
-                    @for (
-                      record of filteredDashboardRecords();
-                      track record.unit + record.subject
-                    ) {
-                      <tr>
-                        <td>{{ record.unit }}</td>
-                        <td>{{ record.subject }}</td>
-
-                        <td>
-                          <span
-                            class="status"
-                            [class.good]="record.status === 'Conforme'"
-                            [class.attention]="
-                              record.status === 'Atenção'
-                            "
-                          >
-                            {{ record.status }}
-                          </span>
-                        </td>
-
-                        <td>
-                          <button
-                            class="row-open"
-                            type="button"
-                            [attr.aria-expanded]="
-                              expandedRecord() === record
-                            "
-                            [attr.aria-label]="
-                              'Consultar ' +
-                              record.subject +
-                              ' de ' +
-                              record.unit
-                            "
-                            (click)="toggleRecord(record)"
-                          >
-                            {{
-                              expandedRecord() === record
-                                ? '−'
-                                : '↗'
-                            }}
-                          </button>
-                        </td>
-                      </tr>
-
-                      @if (expandedRecord() === record) {
-                        <tr class="detail-row">
-                          <td colspan="4">
-                            <strong>
-                              {{ record.type }} / {{ record.unit }}
-                            </strong>
-
-                            <p>{{ record.detail }}</p>
-
-                            <span>
-                              Exemplo ilustrativo de consulta
-                              individual.
-                            </span>
-                          </td>
-                        </tr>
-                      }
-                    }
-                  </tbody>
-                </table>
-              </div>
-
-              <div class="dashboard-disclaimer">
-                <span>
-                  Interface demonstrativa · unidades e registros
-                  fictícios
-                </span>
-
-                <span>
-                  Selecione uma unidade para explorar
-                  <i>↑</i>
-                </span>
-              </div>
-            </div>
+          <div class="dashboard-shell dashboard-image">
+            <img
+              src="assets/dashboard.png"
+              alt="Dashboard gerencial do QualyPosto com indicadores, filtros, mapa da rede e categorias de verificação"
+              width="1780"
+              height="884"
+              loading="lazy"
+            >
           </div>
-
           <div class="dashboard-route">
             <span>VISÃO GERAL</span>
             <i>→</i>
@@ -1053,7 +878,7 @@ interface DashboardRecord {
         </div>
       </section>
 
-      <!-- PLANOS: apresenta os modulos individuais e a solução completa. -->
+      <!-- PLANOS: apresenta os módulos individuais e a solução completa. -->
       <section class="section pricing" id="planos" aria-labelledby="pricing-title">
         <div class="pricing-orbit pricing-orbit--one" aria-hidden="true"></div>
         <div class="pricing-orbit pricing-orbit--two" aria-hidden="true"></div>
@@ -1061,21 +886,21 @@ interface DashboardRecord {
           <div class="pricing-heading">
             <div>
               <p class="eyebrow">ESCOLHA O NÍVEL DE CONTROLE</p>
-              <h2 id="pricing-title">Comece por um modulo.<br><span>Ou conecte toda a operação.</span></h2>
+              <h2 id="pricing-title">Comece por um módulo.<br><span>Ou conecte toda a operação.</span></h2>
             </div>
-            <p>Tecnologia especializada para transformar rotinas criticas do posto em processos rastreaveis, padronizados e faceis de acompanhar.</p>
+            <p>Tecnologia especializada para transformar rotinas críticas do posto em processos rastreáveis, padronizados e fáceis de acompanhar.</p>
           </div>
 
           <div class="pricing-grid">
             <article class="price-card price-card--receiving">
               <div class="price-card-topline">
                 <span class="price-card-code">01 / REC</span>
-                <span class="price-card-status">MODULO INDIVIDUAL</span>
+                <span class="price-card-status">MÓDULO INDIVIDUAL</span>
               </div>
               <div class="price-card-icon" aria-hidden="true"><span>REC</span><i></i></div>
               <p class="micro-label">QUALYPOSTO</p>
               <h3>Recebimento</h3>
-              <p class="price-card-description">Segurança e rastreabilidade da chegada do caminho ate a liberação do combustivel.</p>
+              <p class="price-card-description">Segurança e rastreabilidade da chegada do caminhão até a liberação do combustível.</p>
               <ul class="price-feature-list">
                 <li><span aria-hidden="true"></span> Recebimento automatizado do combustível</li>
                 <li><span aria-hidden="true"></span> Identificação automática dos produtos na nota fiscal</li>
@@ -1083,12 +908,12 @@ interface DashboardRecord {
                 <li><span aria-hidden="true"></span> Direcionamento dos combustíveis para os tanques registrados</li>
                 <li><span aria-hidden="true"></span> Análise dos combustíveis a poucos cliques</li>
                 <li><span aria-hidden="true"></span> Geração automatizada do RAQ digital</li>
-                <li><span aria-hidden="true"></span> Controle do recebimento e guarda das amostras testemunhas</li>
-                <li><span aria-hidden="true"></span> Controle gerencial via Web</li>
-                <li><span aria-hidden="true"></span> Identificação do posto por mapa de geolocalização</li>
+                <li><span aria-hidden="true"></span> Controle do recebimento e da guarda das amostras-testemunha</li>
+                <li><span aria-hidden="true"></span> Controle gerencial via web</li>
+                <li><span aria-hidden="true"></span> Identificação do posto em mapa com geolocalização</li>
                 <li><span aria-hidden="true"></span> Identificação do tanque de descarga por combustível</li>
-                <li><span aria-hidden="true"></span> Registro de guarda de amostra testemunha</li>
-                <li><span aria-hidden="true"></span> Conexão amostra testemunha, tanque e nota fiscal</li>
+                <li><span aria-hidden="true"></span> Registro de guarda de amostra-testemunha</li>
+                <li><span aria-hidden="true"></span> Conexão entre amostra-testemunha, tanque e nota fiscal</li>
                 <li><span aria-hidden="true"></span> Identificação de eventos por posto e data</li>
                 <li><span aria-hidden="true"></span> Impressão do RAQ</li>
                 <li><span aria-hidden="true"></span> Controle histórico dos recebimentos de combustíveis</li>
@@ -1096,7 +921,7 @@ interface DashboardRecord {
               <div class="price-card-footer">
                 <div class="price-value"><span>Investimento</span><strong><sup>R$</sup> 450<small>/mês</small></strong></div>
                 <button class="price-action" type="button" (click)="openContact($event)">
-                  Quero este modulo
+                  Quero este módulo
                 </button>
               </div>
             </article>
@@ -1104,20 +929,20 @@ interface DashboardRecord {
             <article class="price-card price-card--checklist">
               <div class="price-card-topline">
                 <span class="price-card-code">02 / CHK</span>
-                <span class="price-card-status">MODULO INDIVIDUAL</span>
+                <span class="price-card-status">MÓDULO INDIVIDUAL</span>
               </div>
               <div class="price-card-icon" aria-hidden="true"><span>CHK</span><i></i></div>
               <p class="micro-label">QUALYPOSTO</p>
               <h3>Checklist</h3>
               <p class="price-card-description">Inspeções guiadas para elevar o padrão da equipe e enxergar não conformidades com rapidez.</p>
               <ul class="price-feature-list">
-                <li><span aria-hidden="true"></span> Garantia de conformidades perante os órgãos reguladores</li>
-                <li><span aria-hidden="true"></span> Verificação das exigências legais: ANP, INMETRO, PROCON, trabalhistas, órgãos ambientais, regularidades fiscais, bombeiros e demais órgãos de fiscalização</li>
+                <li><span aria-hidden="true"></span> Garantia de conformidade perante os órgãos reguladores</li>
+                <li><span aria-hidden="true"></span> Verificação das exigências legais da ANP, do INMETRO, do PROCON, das normas trabalhistas, dos órgãos ambientais, da regularidade fiscal, do Corpo de Bombeiros e dos demais órgãos de fiscalização</li>
                 <li><span aria-hidden="true"></span> Registros das verificações com imagens e vídeos</li>
                 <li><span aria-hidden="true"></span> Registros descritivos das irregularidades</li>
-                <li><span aria-hidden="true"></span> Controle gerencial via painel Web</li>
-                <li><span aria-hidden="true"></span> Visão administrativa das evoluções e correções das não conformidades</li>
-                <li><span aria-hidden="true"></span> Visão em dashboards</li>
+                <li><span aria-hidden="true"></span> Controle gerencial por meio de painel web</li>
+                <li><span aria-hidden="true"></span> Visão administrativa da evolução e da correção das não conformidades</li>
+                <li><span aria-hidden="true"></span> Visualização em dashboards</li>
                 <li><span aria-hidden="true"></span> Mapas geográficos dos postos</li>
                 <li><span aria-hidden="true"></span> Apontamentos visuais de irregularidades por posto</li>
                 <li><span aria-hidden="true"></span> Relatórios individualizados por varredura</li>
@@ -1126,7 +951,7 @@ interface DashboardRecord {
               <div class="price-card-footer">
                 <div class="price-value"><span>Investimento</span><strong><sup>R$</sup> 750<small>/mês</small></strong></div>
                 <button class="price-action" type="button" (click)="openContact($event)">
-                  Quero este modulo
+                  Quero este módulo
                 </button>
               </div>
             </article>
@@ -1140,7 +965,7 @@ interface DashboardRecord {
               <div class="combo-symbol" aria-hidden="true"><span>REC</span><i>+</i><span>CHK</span></div>
               <p class="micro-label">QUALYPOSTO COMPLETO</p>
               <h3>Combo</h3>
-              <p class="price-card-description">Recebimento e Checklist trabalhando juntos para uma visão gerencial unica de toda a operação.</p>
+              <p class="price-card-description">Recebimento e Checklist trabalham juntos para uma visão gerencial única de toda a operação.</p>
               <ul class="price-feature-list">
                 <li><span aria-hidden="true"></span> Todos os recursos dos dois módulos</li>
                 <li><span aria-hidden="true"></span> Indicadores e evidências de toda a rede</li>
@@ -1654,7 +1479,7 @@ export class AppComponent {
     {
       title: 'Atenção onde ela é necessária.',
       text:
-        'Identifique inconformidades e pontos que precisam de ' +
+        'Identifique não conformidades e pontos que precisam de ' +
         'acompanhamento.'
     },
     {
@@ -1701,8 +1526,8 @@ export class AppComponent {
     {
       question: 'Quais áreas podem ser acompanhadas?',
       answer:
-        'ANP, INMETRO, Bombeiros, Ambiental, Procon, SEFAZ, ' +
-        'Vigilância Sanitária e segurança trabalhista.'
+        'ANP, INMETRO, Corpo de Bombeiros, Meio Ambiente, Procon, SEFAZ, ' +
+        'Vigilância Sanitária e Segurança do Trabalho.'
     },
     {
       question: 'Posso registrar fotos e vídeos?',
@@ -1720,7 +1545,7 @@ export class AppComponent {
       question: 'Como funciona a análise do combustível?',
       answer:
         'O sistema utiliza os dados do recebimento e regras ' +
-        'relacionadas à ANP para indicar conformidade.'
+        'relacionadas à ANP para indicar a conformidade.'
     },
     {
       question: 'Como contratar?',

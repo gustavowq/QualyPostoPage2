@@ -1,7 +1,7 @@
 // Centraliza os dados usados pelo botão de contato.
 export const SITE_CONFIG = {
   /*
-   * Coloque DDi + DDD + número, usando somente números.
+   * Coloque DDI + DDD + número, usando somente números.
    * Exemplo fictício de formato: 5562999999999
    */
   whatsappNumber: '',
