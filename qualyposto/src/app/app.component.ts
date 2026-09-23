@@ -49,7 +49,7 @@ interface DashboardRecord {
             src="assets/qualyposto-logo.png"
             alt="QualyPosto"
             width="1000"
-            height="270" 
+            height="270"
           >
         </a>
 
@@ -72,6 +72,7 @@ interface DashboardRecord {
           <a href="#solucao" (click)="closeMenu()">Solução</a>
           <a href="#checklist" (click)="closeMenu()">Checklist</a>
           <a href="#gerencial" (click)="closeMenu()">Gerencial</a>
+          <a href="#planos" (click)="closeMenu()">Planos</a>
           <a href="#beneficios" (click)="closeMenu()">Benefícios</a>
         </div>
 
@@ -129,9 +130,9 @@ interface DashboardRecord {
             </p>
 
             <h1 id="hero-title" class="hero-enter">
-              Seu posto<br>
-              <span>sob controle.</span><br>
-              Mesmo à distância.
+              Evite multas<br>
+              <span>Da ANP e INMETRO.</span><br>
+
             </h1>
 
             <p class="hero-description hero-enter">
@@ -176,7 +177,7 @@ interface DashboardRecord {
               fetchpriority="high"
             >
 
-           
+
 
             <span class="mock-caption">
               Visualização ilustrativa do ecossistema
@@ -1076,12 +1077,24 @@ interface DashboardRecord {
               <h3>Recebimento</h3>
               <p class="price-card-description">Segurança e rastreabilidade da chegada do caminho ate a liberação do combustivel.</p>
               <ul class="price-feature-list">
-                <li><span aria-hidden="true"></span> Conferencia de lacres e evidencias digitais</li>
-                <li><span aria-hidden="true"></span> RAQ e amostra-testemunha organizados</li>
-                <li><span aria-hidden="true"></span> Historico por entrega e por unidade</li>
+                <li><span aria-hidden="true"></span> Recebimento automatizado do combustível</li>
+                <li><span aria-hidden="true"></span> Identificação automática dos produtos na nota fiscal</li>
+                <li><span aria-hidden="true"></span> Controle dos tanques de combustíveis</li>
+                <li><span aria-hidden="true"></span> Direcionamento dos combustíveis para os tanques registrados</li>
+                <li><span aria-hidden="true"></span> Análise dos combustíveis a poucos cliques</li>
+                <li><span aria-hidden="true"></span> Geração automatizada do RAQ digital</li>
+                <li><span aria-hidden="true"></span> Controle do recebimento e guarda das amostras testemunhas</li>
+                <li><span aria-hidden="true"></span> Controle gerencial via Web</li>
+                <li><span aria-hidden="true"></span> Identificação do posto por mapa de geolocalização</li>
+                <li><span aria-hidden="true"></span> Identificação do tanque de descarga por combustível</li>
+                <li><span aria-hidden="true"></span> Registro de guarda de amostra testemunha</li>
+                <li><span aria-hidden="true"></span> Conexão amostra testemunha, tanque e nota fiscal</li>
+                <li><span aria-hidden="true"></span> Identificação de eventos por posto e data</li>
+                <li><span aria-hidden="true"></span> Impressão do RAQ</li>
+                <li><span aria-hidden="true"></span> Controle histórico dos recebimentos de combustíveis</li>
               </ul>
               <div class="price-card-footer">
-                <div class="price-value"><span>Investimento</span><strong><sup>R$</sup> 450</strong></div>
+                <div class="price-value"><span>Investimento</span><strong><sup>R$</sup> 450<small>/mês</small></strong></div>
                 <button class="price-action" type="button" (click)="openContact($event)">
                   Quero este modulo
                 </button>
@@ -1098,12 +1111,20 @@ interface DashboardRecord {
               <h3>Checklist</h3>
               <p class="price-card-description">Inspeções guiadas para elevar o padrão da equipe e enxergar não conformidades com rapidez.</p>
               <ul class="price-feature-list">
-                <li><span aria-hidden="true"></span> Modelos por rotina, norma ou fiscalização</li>
-                <li><span aria-hidden="true"></span> Coleta mobile com fotos e observações</li>
-                <li><span aria-hidden="true"></span> Painel de conformidade entre unidades</li>
+                <li><span aria-hidden="true"></span> Garantia de conformidades perante os órgãos reguladores</li>
+                <li><span aria-hidden="true"></span> Verificação das exigências legais: ANP, INMETRO, PROCON, trabalhistas, órgãos ambientais, regularidades fiscais, bombeiros e demais órgãos de fiscalização</li>
+                <li><span aria-hidden="true"></span> Registros das verificações com imagens e vídeos</li>
+                <li><span aria-hidden="true"></span> Registros descritivos das irregularidades</li>
+                <li><span aria-hidden="true"></span> Controle gerencial via painel Web</li>
+                <li><span aria-hidden="true"></span> Visão administrativa das evoluções e correções das não conformidades</li>
+                <li><span aria-hidden="true"></span> Visão em dashboards</li>
+                <li><span aria-hidden="true"></span> Mapas geográficos dos postos</li>
+                <li><span aria-hidden="true"></span> Apontamentos visuais de irregularidades por posto</li>
+                <li><span aria-hidden="true"></span> Relatórios individualizados por varredura</li>
+                <li><span aria-hidden="true"></span> Certificação das execuções por georreferenciamento</li>
               </ul>
               <div class="price-card-footer">
-                <div class="price-value"><span>Investimento</span><strong><sup>R$</sup> 750</strong></div>
+                <div class="price-value"><span>Investimento</span><strong><sup>R$</sup> 750<small>/mês</small></strong></div>
                 <button class="price-action" type="button" (click)="openContact($event)">
                   Quero este modulo
                 </button>
@@ -1121,12 +1142,12 @@ interface DashboardRecord {
               <h3>Combo</h3>
               <p class="price-card-description">Recebimento e Checklist trabalhando juntos para uma visão gerencial unica de toda a operação.</p>
               <ul class="price-feature-list">
-                <li><span aria-hidden="true"></span> Todos os recursos dos dois modulos</li>
-                <li><span aria-hidden="true"></span> Indicadores e evidencias em uma so visão</li>
-                <li><span aria-hidden="true"></span> Mais contexto para comparar toda a rede</li>
+                <li><span aria-hidden="true"></span> Todos os recursos dos dois módulos</li>
+                <li><span aria-hidden="true"></span> Indicadores e evidências de toda a rede</li>
+                <li><span aria-hidden="true"></span> Mais contexto para controlar toda a rede</li>
               </ul>
               <div class="price-card-footer">
-                <div class="price-value"><span>Investimento</span><strong><sup>R$</sup> 1.100</strong></div>
+                <div class="price-value"><span>Investimento</span><strong><sup>R$</sup> 1.100<small>/mês</small></strong></div>
                 <button class="price-action" type="button" (click)="openContact($event)">
                   Quero controle completo
                 </button>

@@ -2315,6 +2315,15 @@ td {
   vertical-align: top;
 }
 
+.price-value small {
+  margin-left: 5px;
+  color: #8ba6bf;
+  font-size: 0.6875rem;
+  font-weight: 650;
+  letter-spacing: 0;
+  vertical-align: baseline;
+}
+
 .price-action {
   display: flex;
   align-items: center;
@@ -2333,7 +2342,16 @@ td {
 
 .price-action:hover { color: #071c30; background: #78c2ff; border-color: #78c2ff; }
 .price-action span { font-size: 1rem; }
-.price-card--combo .price-action { color: #06203a; background: #ffffff; border-color: #ffffff; }
+.price-card--combo .price-value small {
+  margin-left: 5px;
+  color: #8ba6bf;
+  font-size: 0.6875rem;
+  font-weight: 650;
+  letter-spacing: 0;
+  vertical-align: baseline;
+}
+
+.price-action { color: #06203a; background: #ffffff; border-color: #ffffff; }
 .price-card--combo .price-action:hover { background: #84c9ff; border-color: #84c9ff; }
 .pricing-note {
   display: flex;
