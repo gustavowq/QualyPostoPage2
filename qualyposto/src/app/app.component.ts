@@ -86,13 +86,13 @@ interface DashboardRecord {
           <span aria-hidden="true">↗</span>
         </button>
 
-          <button
+          <a
             class="button button-small nav-sistema"
-            type="button"
+            href="https://qualyposto.com.br/sistema"
           >
           Acessar o sistema
           <span aria-hidden="true">↗</span>
-          </button>
+          </a>
         </div>
 
         <button
