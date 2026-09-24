@@ -4,7 +4,7 @@ export const SITE_CONFIG = {
    * Coloque DDI + DDD + número, usando somente números.
    * Exemplo fictício de formato: 5562999999999
    */
-  whatsappNumber: '',
+  whatsappNumber: '5562998432183',
 
   whatsappMessage:
     'Olá! Conheci o QualyPosto pelo site e gostaria de saber mais sobre a plataforma.'
